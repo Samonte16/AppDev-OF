@@ -13,20 +13,41 @@ const SignupForm = () => {
     setPasswordVisible(!passwordVisible);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic validation (customize as needed)
     if (!agreed) {
-      alert("You must agree to the Terms and Conditions.");
-      return;
+        alert("You must agree to the Terms and Conditions.");
+        return;
     }
 
-    // TODO: Add actual registration logic here (API call, etc.)
+    const userData = {
+        fullName: e.target[0].value,
+        gender: e.target[1].value,
+        age: e.target[2].value,
+        phoneNumber: e.target[3].value,
+        email: e.target[4].value,
+        password: e.target[5].value
+    };
 
-    // After successful signup, redirect to login
-    navigate('/');
-  };
+    try {
+        const response = await fetch('http://localhost:5000/api/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(userData)
+        });
+
+        if (response.ok) {
+            alert('Registration successful!');
+            navigate('/');
+        } else {
+            const error = await response.json();
+            alert(error.message);
+        }
+    } catch (error) {
+        alert('An error occurred. Please try again.');
+    }
+};
 
   return (
     <div className="signup-background">

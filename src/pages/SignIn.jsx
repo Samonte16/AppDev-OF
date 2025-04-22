@@ -14,15 +14,33 @@ const SignIn = () => {
     setPasswordVisible(!passwordVisible);
   };
 
-  const handleSignIn = (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
-    setIsLoading(true); // 👈 start loading
-
-    // Simulate loading delay (e.g. call to backend)
-    setTimeout(() => {
-      setIsLoading(false);
-      navigate('/dashboard'); // 👈 redirect after "signing in"
-    }, 2000); // 2 seconds
+  
+    const userData = {
+      email: e.target[0].value,
+      password: e.target[1].value,
+    };
+  
+    try {
+      const response = await fetch('http://localhost:5000/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(userData),
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem('loggedInUser', JSON.stringify(data.user)); // Save user data to localStorage
+        alert('Login successful!');
+        navigate('/dashboard');
+      } else {
+        const error = await response.json();
+        alert(error.message);
+      }
+    } catch (error) {
+      alert('An error occurred. Please try again.');
+    }
   };
 
   return (

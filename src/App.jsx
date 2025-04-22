@@ -8,6 +8,9 @@ import Settings from './pages/Settings';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Terms from './pages/Terms';
+import Admin from './pages/Admin';
+import AddUser from './pages/AddUser';
+import Schedules from './pages/Schedules';
 
 const App = () => {
   return (
@@ -21,6 +24,9 @@ const App = () => {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/terms" element={<Terms/>} />
+        <Route path="/admin" element={<Admin/>} /> {/* New Admin Page Route */}
+        <Route path="/add-user" element={<AddUser/>} /> {/* New Add User Page Route */}
+        <Route path="/schedules" element={<Schedules/>} /> {/* New Schedules Page Route */}
       </Routes>
     </Router>
   );

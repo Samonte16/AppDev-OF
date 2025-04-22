@@ -1,0 +1,65 @@
+.schedules {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .schedules h2 {
+    color: #207cca;
+    margin-bottom: 20px;
+  }
+  
+  .schedules ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .schedules ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .schedules ul li button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .schedules ul li button:hover {
+    background-color: #c9302c;
+  }
+  
+  .schedules input {
+    margin-right: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .schedules button {
+    background-color: #207cca;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+  }
+  
+  .schedules button:hover {
+    background-color: #0a469e;
+  }
+  
+  .schedules h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }

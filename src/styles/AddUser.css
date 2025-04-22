@@ -1,0 +1,45 @@
+.add-user {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .add-user h2 {
+    color: #207cca;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .add-user input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .add-user button {
+    background-color: #207cca;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .add-user button:hover {
+    background-color: #0a469e;
+  }
+  
+  .add-user button:last-child {
+    background-color: #d9534f;
+  }
+  
+  .add-user button:last-child:hover {
+    background-color: #c9302c;
+  }

@@ -1,0 +1,39 @@
+.admin {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .admin h2 {
+    color: #207cca;
+  }
+  
+  .admin section {
+    margin-bottom: 30px;
+  }
+  
+  .admin ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .admin ul li {
+    margin-bottom: 10px;
+  }
+  
+  .admin input {
+    margin-right: 10px;
+    padding: 5px;
+  }
+  
+  .admin button {
+    padding: 5px 10px;
+    background-color: #207cca;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .admin button:hover {
+    background-color: #0a469e;
+  }

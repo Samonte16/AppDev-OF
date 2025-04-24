@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/Dashboard.css';
+import '../../styles/Dashboard.css';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirect
 
 const Dashboard = () => {
   const [selectedShift, setSelectedShift] = useState('');
@@ -8,6 +9,7 @@ const Dashboard = () => {
   const [clockedInTime, setClockedInTime] = useState(null);
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [schedules, setSchedules] = useState([]);
+  const navigate = useNavigate(); // Hook for navigation after logout
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('loggedInUser'));
@@ -73,9 +75,9 @@ const Dashboard = () => {
     } catch (error) {
         alert('Failed to record clock-in.');
     }
-};
+  };
 
-const handleClockOut = async () => {
+  const handleClockOut = async () => {
     const now = new Date();
     const timestamp = now.toISOString(); // Use ISO format for consistency
 
@@ -98,27 +100,24 @@ const handleClockOut = async () => {
     } catch (error) {
         alert('Failed to record clock-out.');
     }
-};
+  };
 
   return (
     <div className="dashboard">
-      <nav className="navbar">
-        <h2 className="dash-logo">Clock-In Dashboard</h2>
-        <div className="nav-right">
-          <ul>
-            <li><a href="/dashboard">Home</a></li>
-            <li><a href="/profile">Profile</a></li>
-            <li><a href="/settings">Settings</a></li>
-            <li><a href="/admin" className="admin-link">Admin</a></li>
-          </ul>
-        </div>
-      </nav>
-
       <div className="welcome-section">
         <div>
           <h3>{loggedInUser ? loggedInUser.fullName : 'Employee Name'}</h3>
-          <p>Welcome to the Clock-in Dashboard</p>
+          <p>Welcome to the Dashboard</p>
         </div>
+        <div className="welcome-actions">
+          <button className="btn-secondary">Upcoming Schedules</button>
+          <button
+            className="Dash-btn-primary"
+            onClick={() => document.getElementById('clock-in-out').scrollIntoView({ behavior: 'smooth' })}
+          >
+            Clock In / Out
+          </button>
+          </div>
       </div>
 
       <section className="schedules">

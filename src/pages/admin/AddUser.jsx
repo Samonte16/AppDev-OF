@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/AddUser.css';
+import '../../styles/AddUser.css';
 
 const AddUser = () => {
   const [newUser, setNewUser] = useState({ fullName: '', email: '', gender: '', age: '', phoneNumber: '', password: '' });

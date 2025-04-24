@@ -1,16 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import SignIn from './pages/SignIn';
-import SignupForm from './pages/SignUp';
-import Dashboard from './pages/Dashboard';
-import Profile from './pages/Profile';
-import Settings from './pages/Settings';
-import Contact from './pages/Contact';
-import About from './pages/About';
-import Terms from './pages/Terms';
-import Admin from './pages/Admin';
-import AddUser from './pages/AddUser';
-import Schedules from './pages/Schedules';
+import SignIn from './pages/auth/SignIn';
+import SignupForm from './pages/auth/SignUp';
+import Dashboard from './pages/user/Dashboard';
+import Profile from './pages/user/Profile';
+import Settings from './pages/user/Settings';
+import Contact from './pages/user/Contact';
+import About from './pages/user/About';
+import Terms from './pages/user/Terms';
+import Admin from './pages/admin/Admin';
+import AddUser from './pages/admin/AddUser';
+import Schedules from './pages/admin/Schedules';
+import Layout from './components/Layout';
 
 const App = () => {
   return (
@@ -18,15 +19,19 @@ const App = () => {
       <Routes>
         <Route path="/" element={<SignIn />} />
         <Route path="/signup" element={<SignupForm />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/profile" element={<Profile/>} />
-        <Route path="/settings" element={<Settings/>} />
-        <Route path="/contact" element={<Contact/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/terms" element={<Terms/>} />
-        <Route path="/admin" element={<Admin/>} /> {/* New Admin Page Route */}
-        <Route path="/add-user" element={<AddUser/>} /> {/* New Add User Page Route */}
-        <Route path="/schedules" element={<Schedules/>} /> {/* New Schedules Page Route */}
+
+        {/* Routes with shared Layout (Navbar) */}
+        <Route element={<Layout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/add-user" element={<AddUser />} />
+          <Route path="/schedules" element={<Schedules />} />
+        </Route>
       </Routes>
     </Router>
   );

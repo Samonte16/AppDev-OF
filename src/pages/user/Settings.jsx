@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/Settings.css';
+import '../../styles/Settings.css';
 
 const Settings = () => {
   const [notifications, setNotifications] = useState(true);

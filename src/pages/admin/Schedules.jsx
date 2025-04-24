@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/Schedules.css';
+import '../../styles/Schedules.css';
 
 const Schedules = () => {
   const [schedules, setSchedules] = useState([]);

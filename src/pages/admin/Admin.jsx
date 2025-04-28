@@ -30,9 +30,8 @@ const Admin = () => {
   };
 
   const formatDateTime = (dateTimeString) => {
-    if (!dateTimeString) return 'Invalid Date'; // Handle null or undefined timestamps
-  
-    const date = new Date(dateTimeString); // Parse the UTC timestamp
+    if (!dateTimeString) return 'Invalid Date';
+    const date = new Date(dateTimeString);
     return date.toLocaleString('en-US', {
       weekday: 'long',
       year: 'numeric',
@@ -40,44 +39,46 @@ const Admin = () => {
       day: 'numeric',
       hour: '2-digit',
       minute: '2-digit',
-      hour12: true, // Use 12-hour format
+      hour12: true,
     });
   };
 
-return (
-  <div className="admin">
-    <h2>Admin Panel</h2>
+  return (
+    <div className="admin-container">
+      <div className="admin-panel">
+        <h2>Admin Panel</h2>
 
-    <section>
-      <h3>Users</h3>
-      <ul>
-        {users.map((user) => (
-          <li key={user.id} onClick={() => handleUserClick(user)}>
-            {user.full_name} ({user.email})
-          </li>
-        ))}
-      </ul>
-    </section>
+        <section className="admin-section">
+          <h3>Users</h3>
+          <ul className="admin-users">
+            {users.map((user) => (
+              <li key={user.id} onClick={() => handleUserClick(user)}>
+                {user.full_name} ({user.email})
+              </li>
+            ))}
+          </ul>
+        </section>
 
-    {selectedUser && (
-      <section>
-        <h3>Clock-In/Out Logs for {selectedUser.full_name}</h3>
-        <ul>
-          {logs.map((log) => (
-            <li key={log.id}>
-              {log.type === 'in' ? 'Clocked In' : 'Clocked Out'} at {formatDateTime(log.time)}
-            </li>
-          ))}
-        </ul>
-      </section>
-    )}
+        {selectedUser && (
+          <section className="admin-section">
+            <h3>Clock-In/Out Logs for {selectedUser.full_name}</h3>
+            <ul className="admin-logs">
+              {logs.map((log) => (
+                <li key={log.id}>
+                  {log.type === 'in' ? 'Clocked In' : 'Clocked Out'} at {formatDateTime(log.time)}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
-    <div className="admin-navigation">
-      <button onClick={() => navigate('/add-user')}>Add User</button>
-      <button onClick={() => navigate('/schedules')}>Manage Schedules</button>
+        <div className="admin-buttons">
+          <button className="admin-btn-primary" onClick={() => navigate('/add-user')}>Add User</button>
+          <button className="admin-btn-secondary" onClick={() => navigate('/schedules')}>Manage Schedules</button>
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
 };
 
 export default Admin;

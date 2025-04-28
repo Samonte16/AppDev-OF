@@ -1,22 +1,23 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import '../../src/styles/Navbar.css';
+import OnlyFriendsLogo from '../../src/img/OnlyFriends-logo.png';
 
 const Navbar = () => {
-  const location = useLocation();
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Perform your logout logic here (e.g., clearing user data, tokens, etc.)
-    localStorage.removeItem('loggedInUser'); // Example of clearing user data
-
+    localStorage.removeItem('loggedInUser');
     alert('You have logged out.');
-    navigate('/'); // Redirect to the login page after logout
+    navigate('/');
   };
 
   return (
     <nav className="navbar">
-      <h2 className="dash-logo">Only Friends</h2>
+      <div className="logo-container">
+        <img src={OnlyFriendsLogo} alt="OnlyFriends Logo" className="navbar-logo" />
+        <h2 className="dash-logo">OnlyFriends</h2>
+      </div>
       <div className="nav-right">
         <ul>
           <li><a href="/dashboard">Home</a></li>

@@ -4,7 +4,17 @@
   justify-content: space-between; 
   align-items: center;
   background: #0a469e;
-  padding: 15px 100px;
+  padding: 20px 150px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-logo {
+  height: 50px; /* or any size you want */
 }
 
 .nav-right {
@@ -25,7 +35,7 @@
 .navbar ul a {
   color: white;        
   text-decoration: none;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .navbar ul a:hover {

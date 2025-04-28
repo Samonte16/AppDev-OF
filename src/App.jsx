@@ -17,10 +17,11 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        {/* Public routes (NO Navbar) */}
         <Route path="/" element={<SignIn />} />
         <Route path="/signup" element={<SignupForm />} />
 
-        {/* Routes with shared Layout (Navbar) */}
+        {/* Private routes (WITH Navbar inside Layout) */}
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />

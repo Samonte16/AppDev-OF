@@ -35,29 +35,41 @@ const Schedules = () => {
   };
 
   return (
-    <div className="schedules">
-      <h2>Manage Schedules</h2>
-      <ul>
-        {schedules.map((schedule) => (
-          <li key={schedule.id}>
-            {schedule.date} - {schedule.time}{' '}
-            <button onClick={() => handleDeleteSchedule(schedule.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
-      <h4>Add Schedule</h4>
-      <input
-        type="date"
-        value={newSchedule.date}
-        onChange={(e) => setNewSchedule({ ...newSchedule, date: e.target.value })}
-      />
-      <input
-        type="time"
-        value={newSchedule.time}
-        onChange={(e) => setNewSchedule({ ...newSchedule, time: e.target.value })}
-      />
-      <button onClick={handleAddSchedule}>Add Schedule</button>
-      <button onClick={() => navigate('/admin')}>Back to Admin</button>
+    <div className="sched-schedules-container">
+      <div className="sched-schedules">
+        <h2>Manage Schedules</h2>
+        <ul>
+          {schedules.map((schedule) => (
+            <li key={schedule.id}>
+              {schedule.date} - {schedule.time}
+              <button className="delete-btn" onClick={() => handleDeleteSchedule(schedule.id)}>Delete</button>
+            </li>
+          ))}
+        </ul>
+
+        <h4>Add Schedule</h4>
+        <div className="schedules-inputs">
+          <input
+            type="date"
+            value={newSchedule.date}
+            onChange={(e) => setNewSchedule({ ...newSchedule, date: e.target.value })}
+          />
+          <input
+            type="time"
+            value={newSchedule.time}
+            onChange={(e) => setNewSchedule({ ...newSchedule, time: e.target.value })}
+          />
+        </div>
+
+        <div className="schedules-buttons">
+          <button type="submit" className="schedule-btn-primary" onClick={handleAddSchedule}>
+            Add Schedule
+          </button>
+          <button type="button" className="schedule-btn-secondary" onClick={() => navigate('/admin')}>
+            Back to Admin
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

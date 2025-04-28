@@ -8,64 +8,6 @@
   color: white;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #0a469e;
-  padding: 15px 30px;
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 70px; /* space between ul and search bar */
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
-  color: white;
-}
-
-.navbar ul a {
-  color: white;         /* 👈 White text */
-  text-decoration: none; /* 👈 No underline */
-  font-weight: 500;
-}
-
-.navbar ul a:hover {
-  text-decoration: underline; /* Optional: Add underline on hover */
-}
-
-/* Style for the container */
-.navbar .search-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 200px; /* Set a fixed width for the search bar */
-}
-
-/* Style for the search icon */
-.navbar .search-icon {
-  position: absolute;
-  left: 10px; /* Space from the left */
-  font-size: 16px;
-  color: #888; /* Light gray color */
-}
-
-/* Style for the search input */
-.navbar .search {
-  padding: 5px 5px 5px 30px; /* Add padding on the left to make space for the icon */
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  width: 100%;
-  margin-top: 22px;
-}
-
 .welcome-section {
   display: flex;
   align-items: center;
@@ -101,7 +43,7 @@
 }
 
 .Dash-btn-primary {
-  background-color: #207cca;
+  background-color: #0a469e;
   color: white;
   padding: 10px 15px;
   border-color: white;
@@ -116,61 +58,6 @@
   border-color: white;
   border-radius: 6px;
   cursor: pointer;
-}
-
-.clock-log {
-  margin: 40px auto;
-  padding: 25px 30px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  max-width: 100%;
-}
-
-.clock-log h3 {
-  font-size: 1.173em;
-  font-weight: bold;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #e0e0e0;
-  padding-bottom: 10px;
-}
-
-/* Log entry wrapper */
-.log-entry {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 14px 18px;
-  margin-bottom: 16px;
-  border-radius: 10px;
-  font-weight: 500;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-/* Icons */
-.log-entry .log-icon {
-  font-size: 24px;
-}
-
-/* Clock-In entries */
-.log-in {
-  background-color: #e6f4ea;
-  border-left: 6px solid #34a853;
-  color: #155724;
-}
-
-/* Clock-Out entries */
-.log-out {
-  background-color: #fdecea;
-  border-left: 6px solid #d93025;
-  color: #721c24;
-}
-
-/* Timestamp text */
-.log-timestamp {
-  margin-left: auto;
-  font-size: 14px;
-  font-weight: normal;
-  color: #666;
 }
 
 .schedules {
@@ -226,68 +113,4 @@
   background-color: #0d6efd;
   color: white;
   border: none;
-}
-
-.attendance-section {
-  padding: 35px;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  margin: 40px 0;
-}
-
-.attendance-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.attendance-table th, .attendance-table td {
-  border: 1px solid #ddd;
-  padding: 12px;
-  text-align: center;
-}
-
-
-.btn-logout {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #0d6efd;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.btn-logout a{
-  text-decoration: none; /* 👈 No underline */
-  color: white;
-}
-
-.btn-logout:hover {
-  background-color: #0a469e;
-}
-
-
-/* Updated footer styling */
-footer {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 20px;
-  border-top: 1px solid #ddd;
-}
-
-footer a {
-  color: rgb(0, 0, 0);
-  text-decoration: none; /* 👈 No underline */
-  font-weight: 500;
-}
-
-footer a:hover {
-  text-decoration: underline; /* Optional: Add underline on hover */
 }
